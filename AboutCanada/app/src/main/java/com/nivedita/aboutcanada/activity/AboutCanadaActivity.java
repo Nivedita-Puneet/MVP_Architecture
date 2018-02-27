@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nivedita.aboutcanada.R;
@@ -26,6 +27,7 @@ public class AboutCanadaActivity extends BaseApp implements AboutCanadaView {
     public NewsAPIService service;
     ProgressBar progressBar;
     private static final int VERTICAL_ITEM_SPACE = 5;
+    TextView emptyView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class AboutCanadaActivity extends BaseApp implements AboutCanadaView {
         setContentView(R.layout.activity_about_canada);
         list = findViewById(R.id.news_recyclerview);
         progressBar = findViewById(R.id.pb_loading_indicator);
+        emptyView = findViewById(R.id.empty_view);
     }
 
     public void init() {
@@ -73,7 +76,9 @@ public class AboutCanadaActivity extends BaseApp implements AboutCanadaView {
     @Override
     public void onFailure(String appErrorMessage) {
 
-        Toast.makeText(AboutCanadaActivity.this, appErrorMessage, Toast.LENGTH_LONG).show();
+        list.setVisibility(View.GONE);
+        emptyView.setText(appErrorMessage);
+        emptyView.setVisibility(View.VISIBLE);
     }
 
     @Override

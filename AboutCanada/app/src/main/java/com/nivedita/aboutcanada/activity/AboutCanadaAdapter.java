@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.nivedita.aboutcanada.R;
 import com.nivedita.aboutcanada.model.Category;
 import com.nivedita.aboutcanada.model.News;
@@ -37,13 +39,10 @@ public class AboutCanadaAdapter extends RecyclerView.Adapter<AboutCanadaAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        //holder.click(data.get(position), listener);
+
         holder.title.setText(data.get(position).getTitle());
         holder.description.setText(data.get(position).getDescription());
-        Picasso.with(this.context).load(data.get(position).getImageHref()).placeholder(context.getDrawable(R.drawable.no_image))
-                .resize(50, 75)
-                .into(holder.thumbnail);
-
+        Glide.with(context).load(data.get(position).getImageHref()).into(holder.thumbnail);
     }
 
 
