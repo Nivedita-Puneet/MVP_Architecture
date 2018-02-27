@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.nivedita.aboutcanada.R;
 import com.nivedita.aboutcanada.model.Category;
 import com.nivedita.aboutcanada.model.News;
@@ -42,7 +43,8 @@ public class AboutCanadaAdapter extends RecyclerView.Adapter<AboutCanadaAdapter.
 
         holder.title.setText(data.get(position).getTitle());
         holder.description.setText(data.get(position).getDescription());
-        Glide.with(context).load(data.get(position).getImageHref()).into(holder.thumbnail);
+        Glide.with(context).load(data.get(position).getImageHref()).apply(new RequestOptions().
+                placeholder(R.drawable.no_image).fitCenter()).into(holder.thumbnail);
     }
 
 

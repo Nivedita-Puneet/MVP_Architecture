@@ -76,9 +76,7 @@ public class AboutCanadaActivity extends BaseApp implements AboutCanadaView {
     @Override
     public void onFailure(String appErrorMessage) {
 
-        list.setVisibility(View.GONE);
-        emptyView.setText(appErrorMessage);
-        emptyView.setVisibility(View.VISIBLE);
+        Toast.makeText(AboutCanadaActivity.this, appErrorMessage, Toast.LENGTH_LONG).show();
     }
 
     @Override
