@@ -3,7 +3,7 @@ package com.nivedita.weatherutility;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class WeatherUtility extends AppCompatActivity {
+public class WeatherUtility extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

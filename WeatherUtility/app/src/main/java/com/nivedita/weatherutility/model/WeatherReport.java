@@ -11,7 +11,7 @@ public class WeatherReport {
     private String description;
     private String icon;
 
-    public WeatherReport(int id, String main, String description, String icon) {
+    public WeatherReport(int id, String main, String description) {
         this.id = id;
         this.main = main;
         this.description = description;

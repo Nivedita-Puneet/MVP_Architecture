@@ -3,7 +3,7 @@ package com.nivedita.weatherutility.di.module;
 import android.app.Activity;
 import android.content.Context;
 
-import com.nivedita.weatherutility.di.ActivityContext;
+import com.nivedita.weatherutility.di.scope.ActivityContext;
 
 import dagger.Module;
 import dagger.Provides;

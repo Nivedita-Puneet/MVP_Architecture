@@ -1,9 +1,15 @@
 package com.nivedita.weatherutility.data;
 
 import android.content.Context;
-import android.content.SharedPreferences;
+import android.util.Log;
 
-import com.nivedita.weatherutility.di.ApplicationContext;
+import com.nivedita.weatherutility.R;
+import com.nivedita.weatherutility.data.local.NetworkUtils;
+import com.nivedita.weatherutility.di.scope.ApplicationContext;
+import com.nivedita.weatherutility.util.WeatherJSONParser;
+
+import java.io.IOException;
+import java.net.URL;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -26,11 +32,29 @@ public class DataManager {
 
     }
 
-    public void saveAccessToken(String accessToken) {
-        mSharedPrefsHelper.put(SharedPrefsHelper.PREF_KEY_ACCESS_TOKEN, accessToken);
+    public void saveLocation(String location) {
+        mSharedPrefsHelper.put(SharedPrefsHelper.PREFERRED_LOCATION, location);
     }
 
-    public String getAccessToken() {
-        return mSharedPrefsHelper.get(SharedPrefsHelper.PREF_KEY_ACCESS_TOKEN, null);
+    public String getLocation() {
+        return mSharedPrefsHelper.get(SharedPrefsHelper.PREFERRED_LOCATION,
+                mContext.getResources().getString(R.string.pref_location_default));
+    }
+
+    public String[] getWeatherUpdates(String location) {
+
+        URL httpWeatherUrl = NetworkUtils.buildUrl(location);
+        WeatherJSONParser jsonParser = WeatherJSONParser.getInstance();
+        String[] parsedWeatherJSON = null;
+
+        try {
+            String httpWeatherJSON = NetworkUtils.getResponseFromHttpURL(httpWeatherUrl);
+            parsedWeatherJSON = jsonParser.getWeatherAttributesFromJSON(mContext, httpWeatherJSON);
+
+        } catch (IOException e) {
+            Log.e(DataManager.class.getSimpleName(), e.getLocalizedMessage());
+        }
+
+        return parsedWeatherJSON;
     }
 }

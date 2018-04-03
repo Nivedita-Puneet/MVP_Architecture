@@ -1,4 +1,4 @@
-package com.nivedita.weatherutility.di;
+package com.nivedita.weatherutility.di.scope;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

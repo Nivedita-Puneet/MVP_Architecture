@@ -1,7 +1,7 @@
 package com.nivedita.weatherutility.di.component;
 
 import com.nivedita.weatherutility.WeatherUtility;
-import com.nivedita.weatherutility.di.PerActivity;
+import com.nivedita.weatherutility.di.scope.PerActivity;
 import com.nivedita.weatherutility.di.module.ActivityModule;
 
 import dagger.Component;

@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.nivedita.weatherutility.di.ApplicationContext;
+import com.nivedita.weatherutility.di.scope.ApplicationContext;
 
 import dagger.Module;
 import dagger.Provides;

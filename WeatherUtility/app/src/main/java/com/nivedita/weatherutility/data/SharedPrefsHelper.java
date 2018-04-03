@@ -13,7 +13,7 @@ import javax.inject.Singleton;
 public class SharedPrefsHelper {
 
     private SharedPreferences mSharedPreferences;
-    public static String PREF_KEY_ACCESS_TOKEN = "access-token";
+    public static String PREFERRED_LOCATION = "location";
 
     @Inject
     public SharedPrefsHelper(SharedPreferences sharedPreferences) {

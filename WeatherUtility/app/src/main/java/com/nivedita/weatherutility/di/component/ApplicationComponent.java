@@ -5,8 +5,7 @@ import android.content.Context;
 
 import com.nivedita.weatherutility.data.DataManager;
 import com.nivedita.weatherutility.data.SharedPrefsHelper;
-import com.nivedita.weatherutility.di.ApplicationContext;
-import com.nivedita.weatherutility.di.WeatherUtilityApplication;
+import com.nivedita.weatherutility.di.scope.ApplicationContext;
 import com.nivedita.weatherutility.di.module.ApplicationModule;
 
 import javax.inject.Singleton;

@@ -1,15 +1,15 @@
-package com.nivedita.weatherutility.di;
+package com.nivedita.weatherutility.di.scope;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import javax.inject.Qualifier;
+import javax.inject.Scope;
 
 /**
  * Created by PUNEETU on 28-03-2018.
  */
 
-@Qualifier
+@Scope
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ActivityContext {
+public @interface PerActivity {
 }
