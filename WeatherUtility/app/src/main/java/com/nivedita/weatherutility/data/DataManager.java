@@ -33,11 +33,11 @@ public class DataManager {
     }
 
     public void saveLocation(String location) {
-        mSharedPrefsHelper.put(SharedPrefsHelper.PREFERRED_LOCATION, location);
+        mSharedPrefsHelper.put(mContext.getResources().getString(R.string.pref_location_key), location);
     }
 
     public String getLocation() {
-        return mSharedPrefsHelper.get(SharedPrefsHelper.PREFERRED_LOCATION,
+        return mSharedPrefsHelper.get(mContext.getResources().getString(R.string.pref_location_key),
                 mContext.getResources().getString(R.string.pref_location_default));
     }
 

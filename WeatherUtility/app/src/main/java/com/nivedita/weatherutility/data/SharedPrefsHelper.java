@@ -21,7 +21,7 @@ public class SharedPrefsHelper {
     }
 
     public void put(String key, String value) {
-        mSharedPreferences.edit().putString(key, value).apply();
+        mSharedPreferences.edit().putString(key, value).commit();
     }
 
     public void put(String key, int value) {
