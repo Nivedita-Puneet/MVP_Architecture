@@ -2,6 +2,10 @@ package com.nivedita.weatherutility.data;
 
 import android.content.SharedPreferences;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
@@ -13,7 +17,6 @@ import javax.inject.Singleton;
 public class SharedPrefsHelper {
 
     private SharedPreferences mSharedPreferences;
-    public static String PREFERRED_LOCATION = "location";
 
     @Inject
     public SharedPrefsHelper(SharedPreferences sharedPreferences) {
