@@ -1,5 +1,6 @@
 package com.nivedita.weatherutility.di.component;
 
+import com.nivedita.weatherutility.PreferenceFragment;
 import com.nivedita.weatherutility.WeatherUtility;
 import com.nivedita.weatherutility.di.scope.PerActivity;
 import com.nivedita.weatherutility.di.module.ActivityModule;
@@ -15,4 +16,6 @@ import dagger.Component;
 public interface ActivityComponent {
 
     void inject(WeatherUtility weatherUtility);
+
+    //void inject(PreferenceFragment preferenceFragment);
 }

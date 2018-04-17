@@ -11,26 +11,30 @@ import android.support.v7.preference.PreferenceManager;
 import android.support.v7.preference.PreferenceScreen;
 
 import com.nivedita.weatherutility.data.SharedPrefsHelper;
+import com.nivedita.weatherutility.di.WeatherUtilityApplication;
 import com.nivedita.weatherutility.util.WeatherDateUtil;
+
+import javax.inject.Inject;
 
 /**
  * Created by PUNEETU on 28-03-2018.
  */
 
-public class PreferenceFragment extends PreferenceFragmentCompat implements
+public class PreferenceFragment extends BaseFragment implements
         PreferenceScreen.OnPreferenceChangeListener, SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private SharedPrefsHelper sharedPrefsHelper;
+    @Inject
+    SharedPrefsHelper sharedPrefsHelper;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
-        // Add general preferences defined in XML file.
+        // Add general preferences defined in XML fi
+        // le.
         addPreferencesFromResource(R.xml.pref_home);
-
-        SharedPreferences sharedPreferences = getPreferenceScreen().getSharedPreferences();
         PreferenceScreen preferenceScreen = getPreferenceScreen();
         int count = preferenceScreen.getPreferenceCount();
+
 
         for (int i = 0; i < count; i++) {
 
@@ -68,7 +72,7 @@ public class PreferenceFragment extends PreferenceFragmentCompat implements
 
         Preference preference = findPreference(key);
 
-        if(sharedPreferences != null){
+        if (sharedPreferences != null) {
 
             String value = sharedPreferences.getString(preference.getKey(), "");
             setPreferenceSummary(preference, value);

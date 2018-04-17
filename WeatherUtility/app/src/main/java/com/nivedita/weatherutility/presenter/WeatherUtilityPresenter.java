@@ -25,7 +25,6 @@ public class WeatherUtilityPresenter implements
     private Context context;
 
     @Inject
-    @ApplicationContext
     public WeatherUtilityPresenter(DataManager mDataManager, Context context) {
 
         this.mDataManager = mDataManager;
