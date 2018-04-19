@@ -3,6 +3,7 @@ package com.nivedita.weatherutility.di.module;
 import android.app.Activity;
 import android.content.Context;
 
+import com.nivedita.weatherutility.WeatherUtilityAdapter;
 import com.nivedita.weatherutility.di.scope.ActivityContext;
 
 import dagger.Module;
@@ -17,18 +18,19 @@ public class ActivityModule {
 
     private Activity mActivity;
 
-    public ActivityModule(Activity activity){
+    public ActivityModule(Activity activity) {
         mActivity = activity;
     }
 
     @Provides
     @ActivityContext
-    Context provideContext(){
+    Context provideContext() {
         return mActivity;
     }
 
     @Provides
-    Activity provideActivity(){
+    Activity provideActivity() {
         return mActivity;
     }
+
 }

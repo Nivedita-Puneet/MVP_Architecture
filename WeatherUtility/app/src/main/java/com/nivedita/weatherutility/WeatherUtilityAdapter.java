@@ -14,14 +14,16 @@ import android.widget.TextView;
 
 public class WeatherUtilityAdapter extends RecyclerView.Adapter<WeatherUtilityAdapter.WeatherUtilityAdapterViewHolder> {
     private String[] mWeatherData;
-    private final ForecastAdapterOnClickHandler mClickHandler;
+    private final WeatherUtilityAdapterOnClickHandler mClickHandler;
+    private Context context;
 
-    public WeatherUtilityAdapter(ForecastAdapterOnClickHandler clickHandler) {
+    public WeatherUtilityAdapter(WeatherUtilityAdapterOnClickHandler clickHandler, Context context) {
 
         mClickHandler = clickHandler;
+        this.context = context;
     }
 
-    public interface ForecastAdapterOnClickHandler {
+    public interface WeatherUtilityAdapterOnClickHandler {
         void clickListener(String weatherForToday);
     }
 

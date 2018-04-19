@@ -8,7 +8,7 @@ import com.nivedita.weatherutility.model.Weather;
 
 public interface WeatherUtilView extends MVPView {
 
-    void showWeatherReports(Weather weather);
+    void showWeatherReports(String[] weather);
 
     void noWeatherReport();
 
